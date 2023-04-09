@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Event Manager</h1>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        {% for task in tasks %}    
+            <tr>
+                <td>{{ task.action_type }}</td>
+                <td>{{ task.action_type }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                    <br>
+                    <a href="/update/{{ task.id }}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/history/">History</a>
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Event">
+        
+    </form>
+</div>
+</br>
+
+<div class="container">
+    <form action="/" method="POST">
+    <input class="button" style="--color:#1e9bff;" type="submit" name="content" id="content" value="love">
+    </form>
+     
+    </a>
+    <br>
+    <form action="/" method="POST">
+   
+
+      <input class="button" style="--color: #ff1867;" type="submit"  name="content" id="content" value="Blood">
+           
+  
+    </form>
+    <br>
+    <form action="/" method="POST">
+    <input class="button"  style="--color: #6eff3e;" type="submit" name = "content" id="content" value="donate">
+    </form>  
+    <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </a>
+    <br>
+  </div>
+
+
+
+
+{% endblock %}
